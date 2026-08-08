@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stays = [
+	{
+		name: 'Liise talu',
+		description:
+			'Ruhnu vanimaid ja tuntumaid majutuskohti, mis on tegutsenud alates 1998. aastast. Talu mahutab kuni 46 külalist, pakub saunateenust ja toitlustust ning sobib hästi ka suurematele gruppidele ja seltskondadele.',
+	},
+	{
+		name: 'Bullers-Gita',
+		description:
+			'Küla keskuses asuv talumaja eraldi sissepääsuga, mis mahutab kuni 6 külalist. Hea valik neile, kes soovivad rahulikku ja kodust peatuspaika kõigi saare vaatamisväärsuste ja sadama lähedal.',
+	},
+	{
+		name: 'Kordon Ruhnus',
+		description:
+			'Külast eemal asuv majutuskoht, mis on tuntud oma omanäolise atmosfääri ja hea seltskonna poolest. Mahutab kuni 12 külalist ning sobib hästi suuremale sõpruskonnale, kes hindab elavamat puhkust.',
+	},
+];
+---
+
+<Layout
+	title="Majutus — Ruhnu Viiul"
+	description="Ülevaade Ruhnu saare populaarsematest majutusvõimalustest."
+>
+	<section class="hero">
+		<div class="wrap">
+			<p class="eyebrow">Kus ööbida Ruhnul</p>
+			<h1>Majutus</h1>
+			<p class="lead">
+				Ruhnul on mitmeid kodusid ja talumaju, mis pakuvad külalistele ööbimist. Siin toome välja
+				kolm populaarsemat majutuskohta, mida saarel külastajad enim eelistavad.
+			</p>
+		</div>
+	</section>
+
+	<section class="content">
+		<div class="wrap">
+			<h2>Kolm populaarseimat majutuskohta</h2>
+			<ul class="stay-list">
+				{
+					stays.map((stay, index) => (
+						<li>
+							<div class="stay-head">
+								<span class="stay-rank">{index + 1}</span>
+								<span class="stay-name">{stay.name}</span>
+							</div>
+							<p>{stay.description}</p>
+						</li>
+					))
+				}
+			</ul>
+
+			<p class="more-options">
+				Kui neist ei piisa või soovid võrrelda rohkem võimalusi Ruhnul ja mujal Eestis, tasub
+				vaadata <a href="https://majutuseestis.ee">majutuseestis.ee</a>.
+			</p>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(180deg, var(--color-sea) 0%, var(--color-sea-dark) 100%);
+		color: var(--color-sand);
+		padding: 4rem 0 3rem;
+	}
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+		color: var(--color-sand);
+		opacity: 0.75;
+		margin: 0 0 0.5rem;
+	}
+
+	.hero h1 {
+		color: var(--color-sand);
+		font-size: 2.75rem;
+		margin: 0 0 1rem;
+	}
+
+	.hero .lead {
+		color: var(--color-sand);
+		opacity: 0.92;
+		font-size: 1.2rem;
+		max-width: 620px;
+	}
+
+	.content {
+		padding: 3rem 0 4rem;
+	}
+
+	.content h2 {
+		margin-top: 0;
+		font-size: 1.5rem;
+	}
+
+	.stay-list {
+		list-style: none;
+		margin: 1.5rem 0 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.stay-list li {
+		border-left: 3px solid var(--color-wood);
+		padding: 0.25rem 0 0.25rem 1rem;
+	}
+
+	.stay-head {
+		display: flex;
+		align-items: baseline;
+		gap: 0.6rem;
+	}
+
+	.stay-rank {
+		font-weight: 700;
+		color: var(--color-wood);
+		font-size: 1.1rem;
+	}
+
+	.stay-name {
+		font-weight: 700;
+		font-size: 1.1rem;
+		color: var(--color-sea-dark);
+	}
+
+	.stay-list p {
+		margin: 0.35rem 0 0;
+	}
+
+	.more-options {
+		margin-top: 2.25rem;
+	}
+</style>

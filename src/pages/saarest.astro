@@ -1,0 +1,120 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="Saarest — Ruhnu Viiul"
+	description="Ruhnu saar: asukoht, ajalugu, rootsiaegne pärand, loodus ja vaatamisväärsused Liivi lahes."
+>
+	<section class="hero">
+		<div class="wrap">
+			<p class="eyebrow">Liivi lahe pärl</p>
+			<h1>Ruhnu saar</h1>
+			<p class="lead">
+				Ruhnu on Eesti lõunapoolseim ja üks väiksemaid asustatud saari — vaid pisut alla 12
+				ruutkilomeetri suur laik merd Liivi lahes, mille rikkalik ajalugu ja loodus teevad sellest
+				erilise paiga.
+			</p>
+		</div>
+	</section>
+
+	<section class="content">
+		<div class="wrap">
+			<h2>Asukoht ja suurus</h2>
+			<p>
+				Ruhnu asub Liivi lahe keskel, kuuludes haldusliku Saare maakonna alla. Saar on umbes 5,5 km
+				pikk ja 3,5 km lai, kogupindalaga ligikaudu 11,9 km². Lähim maismaapunkt on Läti poolel
+				asuv Kolka neem, mis jääb umbes 37 km kaugusele. Alaliselt elab saarel alla saja inimese,
+				mis teeb Ruhnust Eesti väikseima omavalitsuse.
+			</p>
+
+			<h2>Ajalugu</h2>
+			<p>
+				Ruhnut mainiti esmakordselt kirjalikes allikates 1341. aastal rootsi asundusena. Aastatel
+				1621–1721 kuulus saar Rootsi kuningriigi alla ning sellest ajast pärineb ka saare vanim
+				säilinud puitehitis — 1643–1644 ehitatud puukirik, mis on Eesti vanim säilinud puidust
+				sakraalhoone. Hiljem kuulus Ruhnu Vene tsaaririigi koosseisu ning 1919. aastal liitus
+				iseseisva Eestiga.
+			</p>
+			<p>
+				Sajandite jooksul kujunes saarel välja omapärane rootsikeelne kogukond, kes rääkis
+				erilist ruhnurootsi murret ja hoidis oma tavasid kauem alal kui teised Eesti rannarootsi
+				asulad. 1944. aastal, Teise maailmasõja lõpufaasis, lahkus valdav enamik Ruhnu rootslasi
+				põgenikena Rootsi. Tühjaks jäänud saarele asusid hiljem elama uued elanikud peamiselt
+				Saaremaalt ja Kihnust, kuid rootsiaegne pärand — kirikud, hauaristid, talumaja
+				arhitektuur — on siiani näha ja tuntav.
+			</p>
+
+			<h2>Vaatamisväärsused</h2>
+			<p>
+				Saare tuntuim maamärk on 1877. aastal ehitatud metalltuletorn Haubjerre künkal, mis on
+				oma teleskoopkonstruktsiooniga maailmas ainulaadne ja Eesti lõunapoolseim tuletorn.
+				Kiriku juures seisavad kõrvuti kaks pühakoda: vana 17. sajandi puukirik ja 1912. aastal
+				valminud kivikirik. Korsi talumuuseumis saab tutvuda traditsioonilise ruhnurootsi
+				talupojaarhitektuuri ja hülgepüügiga seotud esemete, rahvarõivaste ning vanade fotodega.
+				Saarel asub ka üks Eesti sügavamaid puurkaeve, mille vesi on tuntud oma rohke
+				mineraalisisalduse poolest.
+			</p>
+
+			<h2>Loodus</h2>
+			<p>
+				Ruhnu idaosa katavad metsad, lääneosas laiuvad põllud ja niidud. Saar kuulub UNESCO
+				Lääne-Eesti saarestiku biosfääri kaitseala koosseisu ning pakub elupaika sadadele
+				taime- ja linnuliikidele. Rannavetes kohtab hülgeid, metsades rebaseid ja teisi
+				väikeimetajaid, ning ümbritsevad veed on tuntud kala- ja hülgerohkuse poolest.
+			</p>
+
+			<h2>Ligipääs ja elu-olu</h2>
+			<p>
+				Ruhnule pääseb praamiga Pärnust, Roomassaarest või Munalaiust suveperioodil (mai–oktoober)
+				ning lennukiga Pärnust ja Kuressaarest aasta ringi. Saarel autosid ei kasutata — liigutakse
+				jalgsi või jalgrattaga. Kohapeal tegutsevad kool, raamatukogu, postkontor, muuseum,
+				kultuurikeskus ning mõned majutus- ja toitlustuskohad, mis teevad Ruhnust hubase paiga
+				linnakärast eemale puhkama tulijaile.
+			</p>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(180deg, var(--color-sea) 0%, var(--color-sea-dark) 100%);
+		color: var(--color-sand);
+		padding: 4rem 0 3rem;
+	}
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+		color: var(--color-sand);
+		opacity: 0.75;
+		margin: 0 0 0.5rem;
+	}
+
+	.hero h1 {
+		color: var(--color-sand);
+		font-size: 2.75rem;
+		margin: 0 0 1rem;
+	}
+
+	.hero .lead {
+		color: var(--color-sand);
+		opacity: 0.92;
+		font-size: 1.2rem;
+		max-width: 620px;
+	}
+
+	.content {
+		padding: 3rem 0 4rem;
+	}
+
+	.content h2 {
+		margin-top: 2.25rem;
+		font-size: 1.5rem;
+	}
+
+	.content h2:first-child {
+		margin-top: 0;
+	}
+</style>
