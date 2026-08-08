@@ -1,0 +1,4 @@
+# Catch-all: any URL that doesn't match a real page or asset (e.g. old
+# links from the previous site) gets a permanent redirect to the homepage,
+# instead of Cloudflare Pages silently serving index.html with a 200.
+/*  https://ruhnuviiul.ee/  301
