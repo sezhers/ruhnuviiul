@@ -1,23 +1,163 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const {
+	title,
+	description = 'Ruhnu Viiul — Ruhnu saare pärimusmuusika ja viiulifestivali lugu.',
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
+<html lang="et">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta name="description" content={description} />
+		<title>{title}</title>
 	</head>
 	<body>
-		<slot />
+		<header class="site-header">
+			<div class="wrap">
+				<a class="brand" href="/">Ruhnu Viiul</a>
+				<nav>
+					<a href="/">Avaleht</a>
+					<a href="/saarest">Saarest</a>
+					<a href="/uritused">Üritused</a>
+					<a href="/majutus">Majutus</a>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="site-footer">
+			<div class="wrap">
+				<p>Ruhnu Viiul &mdash; pühendatud Ruhnu saare viiulifestivali ajaloole ja Ruhnu saarele.</p>
+			</div>
+		</footer>
 	</body>
 </html>
 
-<style>
+<style is:global>
+	:root {
+		--color-ink: #1c2b2d;
+		--color-sea: #1d4e5f;
+		--color-sea-dark: #123640;
+		--color-sand: #f4ede0;
+		--color-wood: #9c5a35;
+		--color-muted: #5a6b6a;
+		font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, 'Times New Roman', serif;
+	}
+
+	* {
+		box-sizing: border-box;
+	}
+
 	html,
 	body {
 		margin: 0;
+		padding: 0;
 		width: 100%;
-		height: 100%;
+		min-height: 100%;
+		background: var(--color-sand);
+		color: var(--color-ink);
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	.wrap {
+		max-width: 780px;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.site-header {
+		background: var(--color-sea-dark);
+		color: var(--color-sand);
+	}
+
+	.site-header .wrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding-top: 1.1rem;
+		padding-bottom: 1.1rem;
+	}
+
+	.brand {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: var(--color-sand);
+		text-decoration: none;
+		letter-spacing: 0.02em;
+	}
+
+	.site-header nav {
+		display: flex;
+		gap: 1.5rem;
+	}
+
+	.site-header nav a {
+		color: var(--color-sand);
+		text-decoration: none;
+		opacity: 0.85;
+		font-size: 1rem;
+	}
+
+	.site-header nav a:hover {
+		opacity: 1;
+		text-decoration: underline;
+	}
+
+	main {
+		flex: 1;
+	}
+
+	h1,
+	h2,
+	h3 {
+		font-family: 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+		color: var(--color-sea-dark);
+		line-height: 1.2;
+	}
+
+	p {
+		line-height: 1.7;
+		font-size: 1.08rem;
+		color: var(--color-ink);
+	}
+
+	a {
+		color: var(--color-wood);
+	}
+
+	.site-footer {
+		background: var(--color-sea-dark);
+		color: var(--color-sand);
+		margin-top: 3rem;
+	}
+
+	.site-footer .wrap {
+		padding-top: 1.5rem;
+		padding-bottom: 1.5rem;
+	}
+
+	.site-footer p {
+		color: var(--color-sand);
+		opacity: 0.75;
+		font-size: 0.9rem;
+		margin: 0;
 	}
 </style>

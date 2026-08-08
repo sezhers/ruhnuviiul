@@ -1,11 +1,117 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+	title="Ruhnu Viiul — Ruhnu viiulifestivali lugu"
+	description="Ruhnu viiulifestivali ajalugu: kuidas Ruhnu saare rootsiaegne viiulipärimus taassündis ja millised muusikud sellest osa said."
+>
+	<section class="hero">
+		<div class="wrap">
+			<p class="eyebrow">Ruhnu viiulifestival 2014–2026</p>
+			<h1>Ruhnu Viiul</h1>
+			<p class="lead">
+				See koduleht jäädvustab Ruhnu saarel toimunud viiulifestivali lugu — pärimusmuusika sündmust,
+				mis tõi väikesele Liivi lahe saarele kokku muusikud Eestist, Rootsist ja mujalt maailmast.
+			</p>
+		</div>
+	</section>
+
+	<section class="content">
+		<div class="wrap">
+			<h2>Katkenud pärimus, mis leidis uue hääle</h2>
+			<p>
+				Kunagi oli Ruhnu tuntud oma osavate viiuldajate poolest. Saarel elanud rootsi kogukonna
+				seas kandus viiulimäng põlvest põlve edasi, kuni Teise maailmasõjaga see traditsioon
+				katkes — 1944. aastal lahkus valdav enamik Ruhnu rootslasi saarelt Rootsi ning koos
+				nendega vaikis pikaks ajaks ka omapärane ruhnurootsi viiulimuusika.
+			</p>
+			<p>
+				Ligi seitse aastakümmet hiljem, umbes 2014. aastal, hakkasid pärimusmuusikud
+				Karoliina Kreintaal, Lee Taul, Sänni Noormets ja Kairi Leivo Ruhnul viiulilaagreid
+				korraldama. Ideed innustasid vanad helisalvestused kahest saare legendaarsest
+				viiuldajast, Elias Schönbergist ja Peeter Rooslaiust, kelle omapärane mängustiil
+				ajendas seda pärandit uuesti elavdama.
+			</p>
+
+			<h2>Laagrist rahvusvaheliseks festivaliks</h2>
+			<p>
+				Aastate jooksul kasvas väike viiulilaager välja avalikuks festivaliks. 2023. aasta suvel
+				toimus esimene Ruhnu viiulifestival, kus ruhnurootsi koraalid, viiulimuusika ja mitme
+				maa pärimusmuusika moodustasid tugeva terviku. Festivalile kutsuti õpetajaid ja esinejaid
+				väga erinevatest muusikakultuuridest — Iirimaalt Süüriani ja Küproselt Brasiiliani —
+				ning kavas olid avalikud kontserdid, tantsuõpitoad, loengud ja kirikukülastused, aga
+				samuti hülgevaatlus ja rahvarõivanäitused.
+			</p>
+			<p>
+				Festivali tuumaks jäi terve nädal koos veedetud aeg: osalejad, nii saare enda elanikud
+				kui ka mandrilt ja välismaalt tulnud muusikud, moodustasid nädalaks üheks loominguliseks
+				kogukonnaks. Ruhnu elanikele oli osalemine töötubades alati tasuta, mandrilt tulijate
+				arv aga piiratud, et festival jääks kodusele ja isiklikule saarele sobivaks.
+			</p>
+
+			<h2>Viimane festival 2026. aastal</h2>
+			<p>
+				2026. aasta juulis, 1.–8. juulini, toimus festivali kolmeteistkümnes ja ühtlasi viimane
+				kordus. Nädala jooksul osales ligi 25 muusikut igas vanuses, õpetajate hulgas olid muu
+				hulgas Karoliina Kreintaal, Lee Taul, Sänni Noormets, Kairi Leivo ja Leanne Barbo ning
+				külalisena Rootsi viiulivirtuoos Mats Edén ja pillimees Jonas Simonson. Kavas oli
+				Rootsi suursaadiku külaskäik Ruhnu kirikusse, avalikud kontserdid, balkani muusika õhtu
+				ning Rootsi kultuuriõhtu Korsi talus.
+			</p>
+			<p>
+				Pärast kolmteist aastat kestnud tegevust otsustasid korraldajad, et 2026. aasta festival
+				jääb viimaseks. Sellel kodulehel elab Ruhnu viiulifestivali lugu edasi ajaloona — ning
+				edaspidi räägime siin Ruhnu saarest endast: selle loodusest, pärandist ja igapäevaelust.
+				Loe lähemalt <a href="/saarest">Ruhnu saare</a> kohta.
+			</p>
+			<p>
+				See koduleht on loodud austusavaldusena kaunile Ruhnu saarele ning selle eest hoolitseb
+				<a href="https://hornet.ee">Hornet.ee</a>.
+			</p>
+		</div>
+	</section>
 </Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(180deg, var(--color-sea) 0%, var(--color-sea-dark) 100%);
+		color: var(--color-sand);
+		padding: 4rem 0 3rem;
+	}
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+		color: var(--color-sand);
+		opacity: 0.75;
+		margin: 0 0 0.5rem;
+	}
+
+	.hero h1 {
+		color: var(--color-sand);
+		font-size: 2.75rem;
+		margin: 0 0 1rem;
+	}
+
+	.hero .lead {
+		color: var(--color-sand);
+		opacity: 0.92;
+		font-size: 1.2rem;
+		max-width: 620px;
+	}
+
+	.content {
+		padding: 3rem 0 4rem;
+	}
+
+	.content h2 {
+		margin-top: 2.25rem;
+		font-size: 1.5rem;
+	}
+
+	.content h2:first-child {
+		margin-top: 0;
+	}
+</style>

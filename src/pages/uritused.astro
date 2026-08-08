@@ -1,0 +1,263 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const annualEvents = [
+	{
+		name: 'Liise jooks Ruhnus',
+		time: 'mai lõpp',
+		description: 'Traditsiooniline kevadine Liise jooks Ruhnus koos lastejooksudega.',
+	},
+	{
+		name: 'Ruhnu Jaanituli',
+		time: '23. juuni',
+		description: 'Kogukondlik suve alguse tähistamine ja jaanipäeva pidu.',
+	},
+	{
+		name: 'Musical Expedition Ruhnu',
+		time: 'juuli keskpaik',
+		description:
+			'Klassikalise muusika festival metsas, rannal ja tuletornis, mida korraldab Ruhnu Kultuuriait.',
+	},
+	{
+		name: 'Magdaleena päevad',
+		time: '22. juuli',
+		description:
+			'Ruhnu ajaloolise puukiriku nimepäeva tähistamine jumalateenistuste, rootsi keele kultuuri ja ühise lõunaga.',
+	},
+	{
+		name: 'Ruhnu viiulifestival',
+		time: 'juuli lõpp',
+		description: 'Kokku tulevad Eesti, Rootsi ja maailma pärimusmuusikud.',
+		note: true,
+	},
+	{
+		name: 'Käsitöölaager',
+		time: 'augusti algus',
+		description: 'Suvine laager kohaliku käsitöö ja oskuste õppimiseks.',
+	},
+	{
+		name: 'Kihnu-Ruhnu mängud',
+		time: 'augusti algus',
+		description: 'Ajalooline spordi- ja kultuurivõistlus Ruhnu ja Kihnu saarte rahva vahel.',
+	},
+	{
+		name: 'RuhnuRahu festival ja suvelaat',
+		time: 'augusti keskpaik',
+		description: 'Eesti väikseim kultuuri- ja muusikafestival RuhnuRahu koos kohaliku laadaga.',
+	},
+];
+
+const upcomingEvents = [
+	{
+		date: '9.–11. august 2026',
+		event: 'Ruhnu käsitöölaager',
+		description: 'Meisterdamine ja pärandkultuur.',
+	},
+	{
+		date: '9.–11. august 2026',
+		event: 'Kihnu-Ruhnu mängud',
+		description: 'Kahe saare vaheline mõõduvõtt spordis ja kultuuris.',
+	},
+	{
+		date: '14.–16. august 2026',
+		event: 'RuhnuRahu festival & laat',
+		description: 'Eesti väikseim festival RuhnuRahu 2026 (esinejad nagu J.M.K.E., Meisterjaan).',
+	},
+	{
+		date: 'September – oktoober',
+		event: 'Kogukonnaõhtud',
+		description: 'Kohalikud filmi- ja jutuõhtud Ruhnu Rahvamajas ilma suuremate avalike festivalideta.',
+	},
+];
+---
+
+<Layout
+	title="Üritused — Ruhnu Viiul"
+	description="Ruhnu saare traditsioonilised aastased üritused ning lähikuudel toimuvad sündmused."
+>
+	<section class="hero">
+		<div class="wrap">
+			<p class="eyebrow">Saare kultuurikalender</p>
+			<h1>Üritused</h1>
+			<p class="lead">
+				Ruhnul toimub suve jooksul terve rida traditsioonilisi üritusi — spordist ja käsitööst
+				muusika ja kogukonnapidudeni. Siit leiad ülevaate igal aastal korduvatest sündmustest ning
+				lähikuudel toimuvast.
+			</p>
+		</div>
+	</section>
+
+	<section class="content">
+		<div class="wrap">
+			<h2>Igal aastal toimuvad traditsioonilised üritused</h2>
+			<ul class="event-list">
+				{
+					annualEvents.map((item) => (
+						<li>
+							<div class="event-head">
+								<span class="event-name">{item.name}</span>
+								<span class="event-time">{item.time}</span>
+							</div>
+							<p>{item.description}</p>
+							{item.note && (
+								<p class="event-note">
+									2026. aasta festival oli korraldajate sõnul viimane — loe pikemalt{' '}
+									<a href="/">festivali loo</a> kohta.
+								</p>
+							)}
+						</li>
+					))
+				}
+			</ul>
+
+			<h2>Sündmused järgmistel kuudel (august ja september 2026)</h2>
+			<p>
+				August on Ruhnu kultuurisuve tipphetk, pärast mida tõmbub saareelu sügiseks vaiksemaks.
+			</p>
+
+			<div class="table-wrap">
+				<table>
+					<thead>
+						<tr>
+							<th>Kuupäev / kuu</th>
+							<th>Üritus</th>
+							<th>Kirjeldus</th>
+						</tr>
+					</thead>
+					<tbody>
+						{
+							upcomingEvents.map((row) => (
+								<tr>
+									<td>{row.date}</td>
+									<td>{row.event}</td>
+									<td>{row.description}</td>
+								</tr>
+							))
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero {
+		background: linear-gradient(180deg, var(--color-sea) 0%, var(--color-sea-dark) 100%);
+		color: var(--color-sand);
+		padding: 4rem 0 3rem;
+	}
+
+	.eyebrow {
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		font-size: 0.85rem;
+		color: var(--color-sand);
+		opacity: 0.75;
+		margin: 0 0 0.5rem;
+	}
+
+	.hero h1 {
+		color: var(--color-sand);
+		font-size: 2.75rem;
+		margin: 0 0 1rem;
+	}
+
+	.hero .lead {
+		color: var(--color-sand);
+		opacity: 0.92;
+		font-size: 1.2rem;
+		max-width: 620px;
+	}
+
+	.content {
+		padding: 3rem 0 4rem;
+	}
+
+	.content h2 {
+		margin-top: 2.25rem;
+		font-size: 1.5rem;
+	}
+
+	.content h2:first-child {
+		margin-top: 0;
+	}
+
+	.event-list {
+		list-style: none;
+		margin: 1.5rem 0 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.event-list li {
+		border-left: 3px solid var(--color-wood);
+		padding: 0.25rem 0 0.25rem 1rem;
+	}
+
+	.event-head {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: baseline;
+		gap: 0.6rem;
+	}
+
+	.event-name {
+		font-weight: 700;
+		font-size: 1.1rem;
+		color: var(--color-sea-dark);
+	}
+
+	.event-time {
+		font-size: 0.9rem;
+		color: var(--color-muted);
+		text-transform: lowercase;
+	}
+
+	.event-list p {
+		margin: 0.35rem 0 0;
+	}
+
+	.event-note {
+		font-size: 0.92rem;
+		font-style: italic;
+		color: var(--color-muted);
+	}
+
+	.table-wrap {
+		margin-top: 1.5rem;
+		overflow-x: auto;
+		border-radius: 8px;
+		border: 1px solid rgba(28, 43, 45, 0.12);
+	}
+
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		background: white;
+		font-size: 0.98rem;
+	}
+
+	th,
+	td {
+		text-align: left;
+		padding: 0.75rem 1rem;
+		vertical-align: top;
+	}
+
+	thead th {
+		background: var(--color-sea-dark);
+		color: var(--color-sand);
+		font-weight: 700;
+	}
+
+	tbody tr:nth-child(even) {
+		background: rgba(28, 43, 45, 0.04);
+	}
+
+	tbody tr:not(:last-child) td {
+		border-bottom: 1px solid rgba(28, 43, 45, 0.08);
+	}
+</style>
