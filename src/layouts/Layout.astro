@@ -2,14 +2,17 @@
 interface Props {
 	title: string;
 	description?: string;
+	ogImage?: string;
 }
 
 const {
 	title,
 	description = 'Ruhnu Viiul — Ruhnu saare pärimusmuusika ja viiulifestivali lugu.',
+	ogImage = '/og-image.png',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -23,6 +26,21 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
 		<title>{title}</title>
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Ruhnu Viiul" />
+		<meta property="og:locale" content="et_EE" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageURL} />
 	</head>
 	<body>
 		<header class="site-header">
