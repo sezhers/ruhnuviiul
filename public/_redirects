@@ -1,4 +1,17 @@
-# Catch-all: any URL that doesn't match a real page or asset (e.g. old
-# links from the previous site) gets a permanent redirect to the homepage,
+# Exempt real pages and assets from the catch-all below. A rule whose
+# source and destination are identical is a no-op that stops Cloudflare
+# Pages from falling through to the wildcard rule for that exact path.
+/                 /                 200
+/saarest          /saarest          200
+/saarest/         /saarest/         200
+/uritused         /uritused         200
+/uritused/        /uritused/        200
+/majutus          /majutus          200
+/majutus/         /majutus/         200
+/favicon.ico      /favicon.ico      200
+/favicon.svg      /favicon.svg      200
+
+# Catch-all: any other URL that doesn't match a real page (e.g. old links
+# from the previous site) gets a permanent redirect to the homepage,
 # instead of Cloudflare Pages silently serving index.html with a 200.
 /*  https://ruhnuviiul.ee/  301
