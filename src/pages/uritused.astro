@@ -28,7 +28,6 @@ const annualEvents = [
 		name: 'Ruhnu viiulifestival',
 		time: 'juuli lõpp',
 		description: 'Kokku tulevad Eesti, Rootsi ja maailma pärimusmuusikud.',
-		note: true,
 	},
 	{
 		name: 'Käsitöölaager',
@@ -99,12 +98,6 @@ const upcomingEvents = [
 								<span class="event-time">{item.time}</span>
 							</div>
 							<p>{item.description}</p>
-							{item.note && (
-								<p class="event-note">
-									2026. aasta festival oli korraldajate sõnul viimane — loe pikemalt{' '}
-									<a href="/">festivali loo</a> kohta.
-								</p>
-							)}
 						</li>
 					))
 				}
@@ -218,12 +211,6 @@ const upcomingEvents = [
 
 	.event-list p {
 		margin: 0.35rem 0 0;
-	}
-
-	.event-note {
-		font-size: 0.92rem;
-		font-style: italic;
-		color: var(--color-muted);
 	}
 
 	.table-wrap {
